@@ -23,7 +23,7 @@ export const Route = createFileRoute("/admin/reports")({
       { name: "robots", content: "noindex" },
     ],
   }),
-  component: AdminReports;
+  component: AdminReports,
 });
 
 const RANGES = ["Last 30 days", "Last quarter", "Year to date"] as const;
