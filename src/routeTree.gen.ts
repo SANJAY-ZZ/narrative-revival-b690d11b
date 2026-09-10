@@ -15,6 +15,15 @@ import { Route as AdminRouteImport } from './routes/admin'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as EmployeeRouteImport } from './routes/employee'
 import { Route as AdminIndexRouteImport } from './routes/admin.index'
+import { Route as AdminActivityRouteImport } from './routes/admin.activity'
+import { Route as AdminBudgetRouteImport } from './routes/admin.budget'
+import { Route as AdminClientsRouteImport } from './routes/admin.clients'
+import { Route as AdminContentRouteImport } from './routes/admin.content'
+import { Route as AdminEmployeesRouteImport } from './routes/admin.employees'
+import { Route as AdminProjectsRouteImport } from './routes/admin.projects'
+import { Route as AdminReportsRouteImport } from './routes/admin.reports'
+import { Route as AdminSettingsRouteImport } from './routes/admin.settings'
+import { Route as AdminTasksRouteImport } from './routes/admin.tasks'
 import { Route as DomainsSlugRouteImport } from './routes/domains.$slug'
 import { Route as ProjectsProjectIdRouteImport } from './routes/projects.$projectId'
 
@@ -48,6 +57,51 @@ const AdminIndexRoute = AdminIndexRouteImport.update({
   path: '/',
   getParentRoute: () => AdminRoute,
 } as any)
+const AdminActivityRoute = AdminActivityRouteImport.update({
+  id: '/activity',
+  path: '/activity',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminBudgetRoute = AdminBudgetRouteImport.update({
+  id: '/budget',
+  path: '/budget',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminClientsRoute = AdminClientsRouteImport.update({
+  id: '/clients',
+  path: '/clients',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminContentRoute = AdminContentRouteImport.update({
+  id: '/content',
+  path: '/content',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminEmployeesRoute = AdminEmployeesRouteImport.update({
+  id: '/employees',
+  path: '/employees',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminProjectsRoute = AdminProjectsRouteImport.update({
+  id: '/projects',
+  path: '/projects',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminReportsRoute = AdminReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminSettingsRoute = AdminSettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminTasksRoute = AdminTasksRouteImport.update({
+  id: '/tasks',
+  path: '/tasks',
+  getParentRoute: () => AdminRoute,
+} as any)
 const DomainsSlugRoute = DomainsSlugRouteImport.update({
   id: '/domains/$slug',
   path: '/domains/$slug',
@@ -65,6 +119,15 @@ export interface FileRoutesByFullPath {
   '/admin': typeof AdminRouteWithChildren
   '/contact': typeof ContactRoute
   '/employee': typeof EmployeeRoute
+  '/admin/activity': typeof AdminActivityRoute
+  '/admin/budget': typeof AdminBudgetRoute
+  '/admin/clients': typeof AdminClientsRoute
+  '/admin/content': typeof AdminContentRoute
+  '/admin/employees': typeof AdminEmployeesRoute
+  '/admin/projects': typeof AdminProjectsRoute
+  '/admin/reports': typeof AdminReportsRoute
+  '/admin/settings': typeof AdminSettingsRoute
+  '/admin/tasks': typeof AdminTasksRoute
   '/domains/$slug': typeof DomainsSlugRoute
   '/projects/$projectId': typeof ProjectsProjectIdRoute
   '/admin/': typeof AdminIndexRoute
@@ -74,6 +137,15 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/employee': typeof EmployeeRoute
+  '/admin/activity': typeof AdminActivityRoute
+  '/admin/budget': typeof AdminBudgetRoute
+  '/admin/clients': typeof AdminClientsRoute
+  '/admin/content': typeof AdminContentRoute
+  '/admin/employees': typeof AdminEmployeesRoute
+  '/admin/projects': typeof AdminProjectsRoute
+  '/admin/reports': typeof AdminReportsRoute
+  '/admin/settings': typeof AdminSettingsRoute
+  '/admin/tasks': typeof AdminTasksRoute
   '/domains/$slug': typeof DomainsSlugRoute
   '/projects/$projectId': typeof ProjectsProjectIdRoute
   '/admin': typeof AdminIndexRoute
@@ -85,6 +157,15 @@ export interface FileRoutesById {
   '/admin': typeof AdminRouteWithChildren
   '/contact': typeof ContactRoute
   '/employee': typeof EmployeeRoute
+  '/admin/activity': typeof AdminActivityRoute
+  '/admin/budget': typeof AdminBudgetRoute
+  '/admin/clients': typeof AdminClientsRoute
+  '/admin/content': typeof AdminContentRoute
+  '/admin/employees': typeof AdminEmployeesRoute
+  '/admin/projects': typeof AdminProjectsRoute
+  '/admin/reports': typeof AdminReportsRoute
+  '/admin/settings': typeof AdminSettingsRoute
+  '/admin/tasks': typeof AdminTasksRoute
   '/domains/$slug': typeof DomainsSlugRoute
   '/projects/$projectId': typeof ProjectsProjectIdRoute
   '/admin/': typeof AdminIndexRoute
@@ -97,6 +178,15 @@ export interface FileRouteTypes {
     | '/admin'
     | '/contact'
     | '/employee'
+    | '/admin/activity'
+    | '/admin/budget'
+    | '/admin/clients'
+    | '/admin/content'
+    | '/admin/employees'
+    | '/admin/projects'
+    | '/admin/reports'
+    | '/admin/settings'
+    | '/admin/tasks'
     | '/domains/$slug'
     | '/projects/$projectId'
     | '/admin/'
@@ -106,6 +196,15 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/employee'
+    | '/admin/activity'
+    | '/admin/budget'
+    | '/admin/clients'
+    | '/admin/content'
+    | '/admin/employees'
+    | '/admin/projects'
+    | '/admin/reports'
+    | '/admin/settings'
+    | '/admin/tasks'
     | '/domains/$slug'
     | '/projects/$projectId'
     | '/admin'
@@ -116,6 +215,15 @@ export interface FileRouteTypes {
     | '/admin'
     | '/contact'
     | '/employee'
+    | '/admin/activity'
+    | '/admin/budget'
+    | '/admin/clients'
+    | '/admin/content'
+    | '/admin/employees'
+    | '/admin/projects'
+    | '/admin/reports'
+    | '/admin/settings'
+    | '/admin/tasks'
     | '/domains/$slug'
     | '/projects/$projectId'
     | '/admin/'
@@ -175,6 +283,69 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminIndexRouteImport
       parentRoute: typeof AdminRoute
     }
+    '/admin/activity': {
+      id: '/admin/activity'
+      path: '/activity'
+      fullPath: '/admin/activity'
+      preLoaderRoute: typeof AdminActivityRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/budget': {
+      id: '/admin/budget'
+      path: '/budget'
+      fullPath: '/admin/budget'
+      preLoaderRoute: typeof AdminBudgetRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/clients': {
+      id: '/admin/clients'
+      path: '/clients'
+      fullPath: '/admin/clients'
+      preLoaderRoute: typeof AdminClientsRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/content': {
+      id: '/admin/content'
+      path: '/content'
+      fullPath: '/admin/content'
+      preLoaderRoute: typeof AdminContentRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/employees': {
+      id: '/admin/employees'
+      path: '/employees'
+      fullPath: '/admin/employees'
+      preLoaderRoute: typeof AdminEmployeesRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/projects': {
+      id: '/admin/projects'
+      path: '/projects'
+      fullPath: '/admin/projects'
+      preLoaderRoute: typeof AdminProjectsRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/reports': {
+      id: '/admin/reports'
+      path: '/reports'
+      fullPath: '/admin/reports'
+      preLoaderRoute: typeof AdminReportsRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/settings': {
+      id: '/admin/settings'
+      path: '/settings'
+      fullPath: '/admin/settings'
+      preLoaderRoute: typeof AdminSettingsRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/tasks': {
+      id: '/admin/tasks'
+      path: '/tasks'
+      fullPath: '/admin/tasks'
+      preLoaderRoute: typeof AdminTasksRouteImport
+      parentRoute: typeof AdminRoute
+    }
     '/domains/$slug': {
       id: '/domains/$slug'
       path: '/domains/$slug'
@@ -193,10 +364,28 @@ declare module '@tanstack/react-router' {
 }
 
 interface AdminRouteChildren {
+  AdminActivityRoute: typeof AdminActivityRoute
+  AdminBudgetRoute: typeof AdminBudgetRoute
+  AdminClientsRoute: typeof AdminClientsRoute
+  AdminContentRoute: typeof AdminContentRoute
+  AdminEmployeesRoute: typeof AdminEmployeesRoute
+  AdminProjectsRoute: typeof AdminProjectsRoute
+  AdminReportsRoute: typeof AdminReportsRoute
+  AdminSettingsRoute: typeof AdminSettingsRoute
+  AdminTasksRoute: typeof AdminTasksRoute
   AdminIndexRoute: typeof AdminIndexRoute
 }
 
 const AdminRouteChildren: AdminRouteChildren = {
+  AdminActivityRoute: AdminActivityRoute,
+  AdminBudgetRoute: AdminBudgetRoute,
+  AdminClientsRoute: AdminClientsRoute,
+  AdminContentRoute: AdminContentRoute,
+  AdminEmployeesRoute: AdminEmployeesRoute,
+  AdminProjectsRoute: AdminProjectsRoute,
+  AdminReportsRoute: AdminReportsRoute,
+  AdminSettingsRoute: AdminSettingsRoute,
+  AdminTasksRoute: AdminTasksRoute,
   AdminIndexRoute: AdminIndexRoute,
 }
 
