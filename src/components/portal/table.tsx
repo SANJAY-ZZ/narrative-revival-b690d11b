@@ -121,7 +121,7 @@ export function EmptyState({ message }: { message: string }) {
   return <p className="px-5 py-10 text-center text-sm text-muted-foreground">{message}</p>;
 }
 
-export function DataTable<T extends { id?: string }>({
+export function DataTable<T>({
   columns,
   rows,
   rowKey,

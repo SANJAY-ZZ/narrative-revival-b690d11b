@@ -4,7 +4,7 @@ import { toast } from "sonner";
 import { PageHeader } from "@/components/portal/PageHeader";
 import { DemoBadge } from "@/components/portal/DemoBadge";
 import { SectionCard } from "@/components/portal/table";
-import { ThemeToggle } from "@/components/portal/ThemeToggle";
+import { ThemeToggle } from "@/components/public/SiteHeader";
 import { CONTACT } from "@/data/mock";
 
 const TITLE = "Settings — ORVNT Admin";

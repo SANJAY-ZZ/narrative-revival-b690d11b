@@ -82,7 +82,7 @@ export function TaskDetail({ task, open, onOpenChange }: { task: Task | null; op
               <label className="eyebrow">Progress</label>
               <span className="text-sm text-[var(--gold)]">{progress}%</span>
             </div>
-            <Slider value={[progress]} max={100} step={5} onValueChange={([v]) => setProgress(v)} />
+            <Slider value={[progress]} max={100} step={5} onValueChange={([v]) => setProgress(v ?? 0)} />
           </div>
 
           <div>

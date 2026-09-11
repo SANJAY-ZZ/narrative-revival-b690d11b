@@ -31,17 +31,17 @@ import { Sheet, SheetContent } from "@/components/ui/sheet";
 
 const NAV = [
   { to: "/employee", label: "Dashboard", icon: LayoutDashboard, exact: true },
-  { to: "/employee/tasks", label: "My Tasks", icon: ListChecks },
-  { to: "/employee/projects", label: "Projects", icon: FolderKanban },
-  { to: "/employee/team", label: "Team Directory", icon: Users },
-  { to: "/employee/clients", label: "Clients", icon: Building2 },
-  { to: "/employee/reports", label: "Reports", icon: FileBarChart },
-  { to: "/employee/documents", label: "Documents", icon: FileText },
-  { to: "/employee/timesheet", label: "Timesheet", icon: Clock },
-  { to: "/employee/announcements", label: "Announcements", icon: Megaphone },
-  { to: "/employee/calendar", label: "Calendar", icon: CalendarDays },
-  { to: "/employee/leave", label: "Leave Requests", icon: PalmtreeIcon },
-  { to: "/employee/settings", label: "Settings", icon: Settings },
+  { exact: false, to: "/employee/tasks", label: "My Tasks", icon: ListChecks },
+  { exact: false, to: "/employee/projects", label: "Projects", icon: FolderKanban },
+  { exact: false, to: "/employee/team", label: "Team Directory", icon: Users },
+  { exact: false, to: "/employee/clients", label: "Clients", icon: Building2 },
+  { exact: false, to: "/employee/reports", label: "Reports", icon: FileBarChart },
+  { exact: false, to: "/employee/documents", label: "Documents", icon: FileText },
+  { exact: false, to: "/employee/timesheet", label: "Timesheet", icon: Clock },
+  { exact: false, to: "/employee/announcements", label: "Announcements", icon: Megaphone },
+  { exact: false, to: "/employee/calendar", label: "Calendar", icon: CalendarDays },
+  { exact: false, to: "/employee/leave", label: "Leave Requests", icon: PalmtreeIcon },
+  { exact: false, to: "/employee/settings", label: "Settings", icon: Settings },
 ] as const;
 
 function NavList({ onNavigate }: { onNavigate?: () => void }) {

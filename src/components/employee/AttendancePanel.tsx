@@ -20,12 +20,12 @@ export function AttendancePanel({ full = false }: { full?: boolean }) {
     if (!checkedIn || !checkInTime) return null;
     const [h, m] = checkInTime.split(":").map(Number);
     const start = new Date();
-    start.setHours(h, m, 0, 0);
+    start.setHours(h ?? 0, m ?? 0, 0, 0);
     const end = checkedOut && checkOutTime
       ? (() => {
           const [eh, em] = checkOutTime.split(":").map(Number);
           const d = new Date();
-          d.setHours(eh, em, 0, 0);
+          d.setHours(eh ?? 0, em ?? 0, 0, 0);
           return d;
         })()
       : new Date();
