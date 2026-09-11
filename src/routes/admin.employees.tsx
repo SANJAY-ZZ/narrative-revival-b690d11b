@@ -92,7 +92,7 @@ function AdminEmployees() {
 
       <Modal
         open={selected !== null}
-        onOpenChange={(v) => !v && setSelected(null)}
+        onOpenChange={(v) => { if (!v) setSelected(null); }}
         title={selected?.name ?? ""}
         description={selected ? `${selected.role} · ${selected.department}` : undefined}
       >

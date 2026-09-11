@@ -136,7 +136,7 @@ function AdminProjects() {
 
       <Modal
         open={selected !== null}
-        onOpenChange={(v) => !v && setSelected(null)}
+        onOpenChange={(v) => { if (!v) setSelected(null); }}
         title={selected?.name ?? ""}
         description={selected ? `${domainName(selected.domain)} · ${selected.client}` : undefined}
       >

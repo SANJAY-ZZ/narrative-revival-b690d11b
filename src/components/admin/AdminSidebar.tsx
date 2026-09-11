@@ -4,15 +4,15 @@ import { DemoBadge } from "@/components/portal/DemoBadge";
 
 const NAV = [
   { to: "/admin", label: "Dashboard", exact: true },
-  { to: "/admin/content", label: "Website Content" },
-  { to: "/admin/projects", label: "Projects" },
-  { to: "/admin/clients", label: "Clients" },
-  { to: "/admin/employees", label: "Employees" },
-  { to: "/admin/budget", label: "Budget" },
-  { to: "/admin/reports", label: "Reports" },
-  { to: "/admin/tasks", label: "Tasks" },
-  { to: "/admin/settings", label: "Settings" },
-  { to: "/admin/activity", label: "Activity Log" },
+  { exact: false, to: "/admin/content", label: "Website Content" },
+  { exact: false, to: "/admin/projects", label: "Projects" },
+  { exact: false, to: "/admin/clients", label: "Clients" },
+  { exact: false, to: "/admin/employees", label: "Employees" },
+  { exact: false, to: "/admin/budget", label: "Budget" },
+  { exact: false, to: "/admin/reports", label: "Reports" },
+  { exact: false, to: "/admin/tasks", label: "Tasks" },
+  { exact: false, to: "/admin/settings", label: "Settings" },
+  { exact: false, to: "/admin/activity", label: "Activity Log" },
 ] as const;
 
 export function AdminSidebar({ open, onClose }: { open: boolean; onClose: () => void }) {
