@@ -26,11 +26,17 @@ import { Route as AdminSettingsRouteImport } from './routes/admin.settings'
 import { Route as AdminTasksRouteImport } from './routes/admin.tasks'
 import { Route as DomainsSlugRouteImport } from './routes/domains.$slug'
 import { Route as EmployeeIndexRouteImport } from './routes/employee.index'
+import { Route as EmployeeAnnouncementsRouteImport } from './routes/employee.announcements'
+import { Route as EmployeeCalendarRouteImport } from './routes/employee.calendar'
 import { Route as EmployeeClientsRouteImport } from './routes/employee.clients'
+import { Route as EmployeeDocumentsRouteImport } from './routes/employee.documents'
+import { Route as EmployeeLeaveRouteImport } from './routes/employee.leave'
 import { Route as EmployeeProjectsRouteImport } from './routes/employee.projects'
 import { Route as EmployeeReportsRouteImport } from './routes/employee.reports'
+import { Route as EmployeeSettingsRouteImport } from './routes/employee.settings'
 import { Route as EmployeeTasksRouteImport } from './routes/employee.tasks'
 import { Route as EmployeeTeamRouteImport } from './routes/employee.team'
+import { Route as EmployeeTimesheetRouteImport } from './routes/employee.timesheet'
 import { Route as ProjectsProjectIdRouteImport } from './routes/projects.$projectId'
 
 const IndexRoute = IndexRouteImport.update({
@@ -118,9 +124,29 @@ const EmployeeIndexRoute = EmployeeIndexRouteImport.update({
   path: '/',
   getParentRoute: () => EmployeeRoute,
 } as any)
+const EmployeeAnnouncementsRoute = EmployeeAnnouncementsRouteImport.update({
+  id: '/announcements',
+  path: '/announcements',
+  getParentRoute: () => EmployeeRoute,
+} as any)
+const EmployeeCalendarRoute = EmployeeCalendarRouteImport.update({
+  id: '/calendar',
+  path: '/calendar',
+  getParentRoute: () => EmployeeRoute,
+} as any)
 const EmployeeClientsRoute = EmployeeClientsRouteImport.update({
   id: '/clients',
   path: '/clients',
+  getParentRoute: () => EmployeeRoute,
+} as any)
+const EmployeeDocumentsRoute = EmployeeDocumentsRouteImport.update({
+  id: '/documents',
+  path: '/documents',
+  getParentRoute: () => EmployeeRoute,
+} as any)
+const EmployeeLeaveRoute = EmployeeLeaveRouteImport.update({
+  id: '/leave',
+  path: '/leave',
   getParentRoute: () => EmployeeRoute,
 } as any)
 const EmployeeProjectsRoute = EmployeeProjectsRouteImport.update({
@@ -133,6 +159,11 @@ const EmployeeReportsRoute = EmployeeReportsRouteImport.update({
   path: '/reports',
   getParentRoute: () => EmployeeRoute,
 } as any)
+const EmployeeSettingsRoute = EmployeeSettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => EmployeeRoute,
+} as any)
 const EmployeeTasksRoute = EmployeeTasksRouteImport.update({
   id: '/tasks',
   path: '/tasks',
@@ -141,6 +172,11 @@ const EmployeeTasksRoute = EmployeeTasksRouteImport.update({
 const EmployeeTeamRoute = EmployeeTeamRouteImport.update({
   id: '/team',
   path: '/team',
+  getParentRoute: () => EmployeeRoute,
+} as any)
+const EmployeeTimesheetRoute = EmployeeTimesheetRouteImport.update({
+  id: '/timesheet',
+  path: '/timesheet',
   getParentRoute: () => EmployeeRoute,
 } as any)
 const ProjectsProjectIdRoute = ProjectsProjectIdRouteImport.update({
@@ -165,11 +201,17 @@ export interface FileRoutesByFullPath {
   '/admin/settings': typeof AdminSettingsRoute
   '/admin/tasks': typeof AdminTasksRoute
   '/domains/$slug': typeof DomainsSlugRoute
+  '/employee/announcements': typeof EmployeeAnnouncementsRoute
+  '/employee/calendar': typeof EmployeeCalendarRoute
   '/employee/clients': typeof EmployeeClientsRoute
+  '/employee/documents': typeof EmployeeDocumentsRoute
+  '/employee/leave': typeof EmployeeLeaveRoute
   '/employee/projects': typeof EmployeeProjectsRoute
   '/employee/reports': typeof EmployeeReportsRoute
+  '/employee/settings': typeof EmployeeSettingsRoute
   '/employee/tasks': typeof EmployeeTasksRoute
   '/employee/team': typeof EmployeeTeamRoute
+  '/employee/timesheet': typeof EmployeeTimesheetRoute
   '/projects/$projectId': typeof ProjectsProjectIdRoute
   '/admin/': typeof AdminIndexRoute
   '/employee/': typeof EmployeeIndexRoute
@@ -188,11 +230,17 @@ export interface FileRoutesByTo {
   '/admin/settings': typeof AdminSettingsRoute
   '/admin/tasks': typeof AdminTasksRoute
   '/domains/$slug': typeof DomainsSlugRoute
+  '/employee/announcements': typeof EmployeeAnnouncementsRoute
+  '/employee/calendar': typeof EmployeeCalendarRoute
   '/employee/clients': typeof EmployeeClientsRoute
+  '/employee/documents': typeof EmployeeDocumentsRoute
+  '/employee/leave': typeof EmployeeLeaveRoute
   '/employee/projects': typeof EmployeeProjectsRoute
   '/employee/reports': typeof EmployeeReportsRoute
+  '/employee/settings': typeof EmployeeSettingsRoute
   '/employee/tasks': typeof EmployeeTasksRoute
   '/employee/team': typeof EmployeeTeamRoute
+  '/employee/timesheet': typeof EmployeeTimesheetRoute
   '/projects/$projectId': typeof ProjectsProjectIdRoute
   '/admin': typeof AdminIndexRoute
   '/employee': typeof EmployeeIndexRoute
@@ -214,11 +262,17 @@ export interface FileRoutesById {
   '/admin/settings': typeof AdminSettingsRoute
   '/admin/tasks': typeof AdminTasksRoute
   '/domains/$slug': typeof DomainsSlugRoute
+  '/employee/announcements': typeof EmployeeAnnouncementsRoute
+  '/employee/calendar': typeof EmployeeCalendarRoute
   '/employee/clients': typeof EmployeeClientsRoute
+  '/employee/documents': typeof EmployeeDocumentsRoute
+  '/employee/leave': typeof EmployeeLeaveRoute
   '/employee/projects': typeof EmployeeProjectsRoute
   '/employee/reports': typeof EmployeeReportsRoute
+  '/employee/settings': typeof EmployeeSettingsRoute
   '/employee/tasks': typeof EmployeeTasksRoute
   '/employee/team': typeof EmployeeTeamRoute
+  '/employee/timesheet': typeof EmployeeTimesheetRoute
   '/projects/$projectId': typeof ProjectsProjectIdRoute
   '/admin/': typeof AdminIndexRoute
   '/employee/': typeof EmployeeIndexRoute
@@ -241,11 +295,17 @@ export interface FileRouteTypes {
     | '/admin/settings'
     | '/admin/tasks'
     | '/domains/$slug'
+    | '/employee/announcements'
+    | '/employee/calendar'
     | '/employee/clients'
+    | '/employee/documents'
+    | '/employee/leave'
     | '/employee/projects'
     | '/employee/reports'
+    | '/employee/settings'
     | '/employee/tasks'
     | '/employee/team'
+    | '/employee/timesheet'
     | '/projects/$projectId'
     | '/admin/'
     | '/employee/'
@@ -264,11 +324,17 @@ export interface FileRouteTypes {
     | '/admin/settings'
     | '/admin/tasks'
     | '/domains/$slug'
+    | '/employee/announcements'
+    | '/employee/calendar'
     | '/employee/clients'
+    | '/employee/documents'
+    | '/employee/leave'
     | '/employee/projects'
     | '/employee/reports'
+    | '/employee/settings'
     | '/employee/tasks'
     | '/employee/team'
+    | '/employee/timesheet'
     | '/projects/$projectId'
     | '/admin'
     | '/employee'
@@ -289,11 +355,17 @@ export interface FileRouteTypes {
     | '/admin/settings'
     | '/admin/tasks'
     | '/domains/$slug'
+    | '/employee/announcements'
+    | '/employee/calendar'
     | '/employee/clients'
+    | '/employee/documents'
+    | '/employee/leave'
     | '/employee/projects'
     | '/employee/reports'
+    | '/employee/settings'
     | '/employee/tasks'
     | '/employee/team'
+    | '/employee/timesheet'
     | '/projects/$projectId'
     | '/admin/'
     | '/employee/'
@@ -430,11 +502,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EmployeeIndexRouteImport
       parentRoute: typeof EmployeeRoute
     }
+    '/employee/announcements': {
+      id: '/employee/announcements'
+      path: '/announcements'
+      fullPath: '/employee/announcements'
+      preLoaderRoute: typeof EmployeeAnnouncementsRouteImport
+      parentRoute: typeof EmployeeRoute
+    }
+    '/employee/calendar': {
+      id: '/employee/calendar'
+      path: '/calendar'
+      fullPath: '/employee/calendar'
+      preLoaderRoute: typeof EmployeeCalendarRouteImport
+      parentRoute: typeof EmployeeRoute
+    }
     '/employee/clients': {
       id: '/employee/clients'
       path: '/clients'
       fullPath: '/employee/clients'
       preLoaderRoute: typeof EmployeeClientsRouteImport
+      parentRoute: typeof EmployeeRoute
+    }
+    '/employee/documents': {
+      id: '/employee/documents'
+      path: '/documents'
+      fullPath: '/employee/documents'
+      preLoaderRoute: typeof EmployeeDocumentsRouteImport
+      parentRoute: typeof EmployeeRoute
+    }
+    '/employee/leave': {
+      id: '/employee/leave'
+      path: '/leave'
+      fullPath: '/employee/leave'
+      preLoaderRoute: typeof EmployeeLeaveRouteImport
       parentRoute: typeof EmployeeRoute
     }
     '/employee/projects': {
@@ -451,6 +551,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EmployeeReportsRouteImport
       parentRoute: typeof EmployeeRoute
     }
+    '/employee/settings': {
+      id: '/employee/settings'
+      path: '/settings'
+      fullPath: '/employee/settings'
+      preLoaderRoute: typeof EmployeeSettingsRouteImport
+      parentRoute: typeof EmployeeRoute
+    }
     '/employee/tasks': {
       id: '/employee/tasks'
       path: '/tasks'
@@ -463,6 +570,13 @@ declare module '@tanstack/react-router' {
       path: '/team'
       fullPath: '/employee/team'
       preLoaderRoute: typeof EmployeeTeamRouteImport
+      parentRoute: typeof EmployeeRoute
+    }
+    '/employee/timesheet': {
+      id: '/employee/timesheet'
+      path: '/timesheet'
+      fullPath: '/employee/timesheet'
+      preLoaderRoute: typeof EmployeeTimesheetRouteImport
       parentRoute: typeof EmployeeRoute
     }
     '/projects/$projectId': {
@@ -504,20 +618,32 @@ const AdminRouteChildren: AdminRouteChildren = {
 const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
 
 interface EmployeeRouteChildren {
+  EmployeeAnnouncementsRoute: typeof EmployeeAnnouncementsRoute
+  EmployeeCalendarRoute: typeof EmployeeCalendarRoute
   EmployeeClientsRoute: typeof EmployeeClientsRoute
+  EmployeeDocumentsRoute: typeof EmployeeDocumentsRoute
+  EmployeeLeaveRoute: typeof EmployeeLeaveRoute
   EmployeeProjectsRoute: typeof EmployeeProjectsRoute
   EmployeeReportsRoute: typeof EmployeeReportsRoute
+  EmployeeSettingsRoute: typeof EmployeeSettingsRoute
   EmployeeTasksRoute: typeof EmployeeTasksRoute
   EmployeeTeamRoute: typeof EmployeeTeamRoute
+  EmployeeTimesheetRoute: typeof EmployeeTimesheetRoute
   EmployeeIndexRoute: typeof EmployeeIndexRoute
 }
 
 const EmployeeRouteChildren: EmployeeRouteChildren = {
+  EmployeeAnnouncementsRoute: EmployeeAnnouncementsRoute,
+  EmployeeCalendarRoute: EmployeeCalendarRoute,
   EmployeeClientsRoute: EmployeeClientsRoute,
+  EmployeeDocumentsRoute: EmployeeDocumentsRoute,
+  EmployeeLeaveRoute: EmployeeLeaveRoute,
   EmployeeProjectsRoute: EmployeeProjectsRoute,
   EmployeeReportsRoute: EmployeeReportsRoute,
+  EmployeeSettingsRoute: EmployeeSettingsRoute,
   EmployeeTasksRoute: EmployeeTasksRoute,
   EmployeeTeamRoute: EmployeeTeamRoute,
+  EmployeeTimesheetRoute: EmployeeTimesheetRoute,
   EmployeeIndexRoute: EmployeeIndexRoute,
 }
 
