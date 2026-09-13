@@ -6,8 +6,8 @@ export function StatCard({
 }: {
   label: string;
   value: string;
-  change?: string;
-  period?: string;
+  change?: string | undefined;
+  period?: string | undefined;
 }) {
   const positive = change?.trim().startsWith("+");
   return (
