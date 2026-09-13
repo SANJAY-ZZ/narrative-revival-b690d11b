@@ -69,7 +69,6 @@ function EmployeeTimesheet() {
         <StatCard
           label="Variance"
           value={`${total - target >= 0 ? "+" : ""}${Math.round((total - target) * 10) / 10}h`}
-          change={total >= target ? "+ on target" : undefined}
           period="Against target"
         />
       </div>
